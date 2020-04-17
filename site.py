@@ -11,7 +11,11 @@ def home():
 
 @app.route("/cheese")
 def burger():
-    return "<h1>CHEESEBURGERS ARE BETTER"
+    return """<h1>CHEESEBURGERS ARE BETTER</h1>
+        <form method="get" action="/">
+            <button type="submit">GO BACK</button>
+        </form>
+    """
 
 if __name__ == '__main__':
     app.run(debug=True)
