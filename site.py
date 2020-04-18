@@ -1,21 +1,13 @@
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return """<h1>HELLO THERE</h1>
-        <form method="get" action="/cheese">
-            <button type="submit">GUESS</button>
-        </form>
-    """
+    return render_template('home.html')
 
-@app.route("/cheese")
-def burger():
-    return """<h1>CHEESEBURGERS ARE BETTER</h1>
-        <form method="get" action="/">
-            <button type="submit">GO BACK</button>
-        </form>
-    """
+@app.route("/contact")
+def contact():
+    return render_template('contact.html', title='Contact')
 
 if __name__ == '__main__':
     app.run(debug=True)
