@@ -9,5 +9,9 @@ def home():
 def contact():
     return render_template('contact.html', title='Contact')
 
+@app.route("/work")
+def work():
+    return render_template('work.html', title='Work')
+
 if __name__ == '__main__':
     app.run(debug=True)
